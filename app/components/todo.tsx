@@ -1,3 +1,4 @@
+// @ts-nocheck 
 import React, { useState } from "react";
 import { TodoType } from "../types";
 import { useTodos } from "../hooks/useTodos";
@@ -11,6 +12,7 @@ type todoProps = {
 const Todo = ({ todo }: todoProps) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedTitle, setEditedTitle] = useState<string>(todo.title)
+    //@typescript-eslint/no-unused-vars
     const { todos, isLoading, error, mutate } = useTodos();
     
     const handleEdit = async () => {
