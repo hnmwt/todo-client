@@ -1,9 +1,7 @@
 "use client"
 import Todo from "./components/todo";
-import useSWR from "swr";
 import { TodoType } from "./types";
 import React, { useRef } from "react";
-import { useRouter } from "next/navigation";
 import { useTodos } from "./hooks/useTodos";
 import { API_URL } from "@/constants/url";
 
@@ -11,7 +9,7 @@ export default function Home() {
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-
+ // eslint-disable-next-line @typescript-eslint/no-unused-vars
  const { todos, isLoading, error, mutate } = useTodos();
 
 
