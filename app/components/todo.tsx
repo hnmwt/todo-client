@@ -13,7 +13,7 @@ type todoProps = {
 const Todo = ({ todo }: todoProps) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedTitle, setEditedTitle] = useState<string>(todo.title)
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    //@typescript-eslint/no-unused-vars
     const { todos, isLoading, error, mutate } = useTodos();
     
     const handleEdit = async () => {
@@ -41,8 +41,11 @@ const Todo = ({ todo }: todoProps) => {
             headers: { "Content-Type": "application/json" },
         });
         if (response.ok) {
+            const deletedTodo = await response.json();
             const updatedTodos = todos.filter((todo:TodoType)=>todo.id!==id);
+              
             mutate(updatedTodos);
+       
         }
 
     }
