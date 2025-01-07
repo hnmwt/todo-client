@@ -3,3 +3,9 @@ export type TodoType ={
     title:string;
     isCompleted:boolean;
 };
+
+export type InputLocType={
+    origin:string;
+    dest:string;
+    waypoint:Array<string>;
+}
